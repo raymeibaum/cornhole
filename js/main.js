@@ -2,9 +2,6 @@ $(function() {
 
   var teamBlackScore = 0, teamRedScore = 0;
 
-  $teamOneScore = $('h1#team-one-score');
-  $teamTwoScore = $('h1#team-two-score');
-
   $('div.btn-group.team-black').on("click", "button", function($event) {
     switch ($event.target.innerText) {
       case "+1":
