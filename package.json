@@ -1,0 +1,28 @@
+{
+  "name": "cornhole",
+  "version": "1.0.0",
+  "description": "GA WDI Cornhole",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raymeibaum/cornhole.git"
+  },
+  "keywords": [
+    "GA",
+    "WDI",
+    "Cornhole"
+  ],
+  "author": "Ray Meibaum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raymeibaum/cornhole/issues"
+  },
+  "homepage": "https://github.com/raymeibaum/cornhole#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "hbs": "^4.0.1"
+  }
+}
