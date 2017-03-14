@@ -34,7 +34,6 @@ $(function() {
   });
   $('form').submit(function($event) {
     $event.preventDefault();
-
     var playerOne = $event.target[0].value;
     var playerTwo = $event.target[1].value;
 
