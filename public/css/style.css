@@ -1,3 +1,24 @@
-h1#team-two-score {
-  color: red;
+body {
+  padding-top: 70px;
+}
+div#score-board {
+  display: flex;
+  align-items: center;
+}
+h1#vs {
+  color: black;
+  margin: 0;
+}
+div.jumbotron {
+  color: white;
+}
+div.jumbotron.jumbotron-red {
+  background-color: rgba(0,0,0,0.8)
+}
+
+div.jumbotron.jumbotron-black {
+  background-color: rgba(255,0,0,0.8)
+}
+form#submit-game {
+  margin: 0 auto;
 }

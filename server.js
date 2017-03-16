@@ -17,7 +17,9 @@ app.get('/', (req, res) => {
 app.get('/next', (req, res) => {
   res.render('next');
 });
-app.get('/signup', (req, res) => res.render('signup'));
+app.get('/signup', (req, res) => {
+  res.render('signup');
+});
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`hello-express is listening on port: ${port}`));
+app.listen(port, () => console.log(`listening on port: ${port}`));
