@@ -2,12 +2,16 @@ extends ../template.pug
 block content
   div.row.text-center
     div.col-xs-6
-      div.jumbotron#red-jumbotron
-        button.btn.btn-lg.btn-default#red-plus +
-        button.btn.btn-lg.btn-default#red-minus -
-    div.col-xs-6
       div.jumbotron#black-jumbotron
         button.btn.btn-lg.btn-default#black-plus +
         button.btn.btn-lg.btn-default#black-minus -
+    div.col-xs-6
+      div.jumbotron#red-jumbotron
+        button.btn.btn-lg.btn-default#red-plus +
+        button.btn.btn-lg.btn-default#red-minus -
+
   div.text-center
     button.btn.btn-lg.btn-default Clear Scores
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
+  script(src="/js/admin.js")

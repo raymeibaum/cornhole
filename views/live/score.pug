@@ -2,8 +2,11 @@ extends ../template.pug
 block content
   div.row.scoreboard
     div.col-xs-6
-      div.jumbotron#red-jumbotron
-        h1.text-center 0 
-    div.col-xs-6
       div.jumbotron#black-jumbotron
-        h1.text-center 0
+        h1.text-center#black-score 0
+    div.col-xs-6
+      div.jumbotron#red-jumbotron
+        h1.text-center#red-score 0
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
+  script(src="/js/score.js")
