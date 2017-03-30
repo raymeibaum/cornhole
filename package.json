@@ -23,6 +23,7 @@
   "homepage": "https://github.com/raymeibaum/cornhole#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "pug": "^2.0.0-beta11"
   }
 }
