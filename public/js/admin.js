@@ -13,6 +13,10 @@ function shiftList() {
 	socket.emit('shift-list');
 }
 
+function incrementMillie() {
+  socket.emit('increment-millie');
+}
+
 socket.on('signup-list', function(list) {
   $upNextContainer.empty();
   list.forEach(function(team) {
@@ -25,4 +29,5 @@ $(function() {
   $('div.jumbotron').on('click', 'button', adjustScore);
   $('button#clear-scores').on('click', resetScores);
   $('button#shift-list').on('click', shiftList);
+  $('button#increment-millie').on('click', incrementMillie);
 });

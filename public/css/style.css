@@ -13,3 +13,16 @@ div.jumbotron#red-jumbotron {
 a#footer-link {
   color: inherit;
 }
+div#millie-container {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  max-width: 200px;
+  max-height: 200px;
+}
+h1#millie-count {
+  position: absolute;
+  right: -50px;
+  bottom: 75px;
+
+}

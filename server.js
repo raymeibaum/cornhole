@@ -12,6 +12,8 @@ let scores = {
 
 let upNext = [];
 
+let laughCount = 0;
+
 io.on('connection', function(socket){
   socket.on('adjust-score', function(id) {
     switch (id) {
@@ -40,8 +42,6 @@ io.on('connection', function(socket){
   socket.on('reset-scores', function() {
     scores.red = 0;
     scores.black = 0;
-    console.log('Black: ' + scores.black);
-    console.log('Red:' + scores.red);
     io.emit('current-score', scores);
   });
 
@@ -58,12 +58,19 @@ io.on('connection', function(socket){
   });
 
   socket.on('shift-list', function() {
-    console.log('trying to shift');
     if (upNext.length >= 1) {
-      console.log('shifted');
       upNext.shift();
     }
     io.emit('signup-list', upNext);
+  });
+
+  socket.on('get-millie', function() {
+    io.emit('current-millie', laughCount);
+  });
+
+  socket.on('increment-millie', function() {
+    laughCount++;
+    io.emit('current-millie', laughCount);
   });
 });
 

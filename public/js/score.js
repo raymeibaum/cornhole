@@ -2,6 +2,7 @@ const socket = io();
 
 const $redScore = $('h1#red-score');
 const $blackScore = $('h1#black-score');
+const $millieCount = $('h1#millie-count');
 const $upNextContainer = $('div.well-container');
 
 socket.on('current-score', function(scores) {
@@ -16,7 +17,12 @@ socket.on('signup-list', function(list) {
   });
 });
 
+socket.on('current-millie', function(millieCount) {
+  $millieCount.text(millieCount);
+});
+
 $(function() {
+  socket.emit('get-millie');
 	socket.emit('get-score');
 	socket.emit('get-signup-list');
 })

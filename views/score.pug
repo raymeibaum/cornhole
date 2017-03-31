@@ -9,6 +9,9 @@ block content
         h1.text-center#red-score 0
   h3 To sign up, please visit #[span.text-danger https://wdi9-cornhole.herokuapp.com/signup]
   include ./upnext.pug
+  div.pull-right#millie-container
+    img(class="img-responsive" id="millie-face" src="/img/millieFace.png")
+    h1#millie-count 1
 block scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
   script(src="/js/score.js")
