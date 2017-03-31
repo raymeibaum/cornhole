@@ -1,13 +1,14 @@
 const socket = io();
 
-const $redScore = $('h1#red-score');
-const $blackScore = $('h1#black-score');
 const $upNextContainer = $('div.well-container');
 
-socket.on('current-score', function(scores) {
-  $blackScore.text(scores.black);
-  $redScore.text(scores.red);
-});
+function submitTeam($event) {
+  $event.preventDefault();
+  socket.emit('signup', {
+    teammate1: $event.target[0].value,
+    teammate2: $event.target[1].value
+  });
+}
 
 socket.on('signup-list', function(list) {
   $upNextContainer.empty();
@@ -17,6 +18,6 @@ socket.on('signup-list', function(list) {
 });
 
 $(function() {
-	socket.emit('get-score');
-	socket.emit('get-signup-list');
-})
+  socket.emit('get-signup-list');
+  $('form#signup').on('submit', submitTeam);
+});

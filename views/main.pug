@@ -1,4 +1,4 @@
-extends ../template.pug
+extends ./template.pug
 block content
   div.row.scoreboard
     div.col-xs-6
@@ -7,6 +7,8 @@ block content
     div.col-xs-6
       div.jumbotron#red-jumbotron
         h1.text-center#red-score 0
+  h3 To sign up, please visit #[span.text-danger https://wdi9-cornhole.herokuapp.com/signup]
+  include ./upnext.pug
 block scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
   script(src="/js/score.js")

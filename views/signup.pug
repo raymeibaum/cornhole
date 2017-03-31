@@ -1,0 +1,16 @@
+extends ./template.pug
+block content
+  div.page-header
+    h2 Sign up
+  form.form-inline#signup
+    div.form-group
+      label(class="sr-only" for="player-one") Player 1
+      input(type="text" class="form-control" id="player-one" placeholder="Teammate 1" required)
+    div.form-group
+      label(class="sr-only" for="player-two") Player 2
+      input(type="text" class="form-control" id="player-two" placeholder="Teammate 2" required)
+    button(type="submit" class="btn btn-success") Sign up
+  include ./upnext.pug
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
+  script(src="/js/signup.js")

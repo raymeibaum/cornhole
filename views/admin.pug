@@ -1,4 +1,4 @@
-extends ../template.pug
+extends ./template.pug
 block content
   div.row.text-center
     div.col-xs-6
@@ -9,9 +9,10 @@ block content
       div.jumbotron#red-jumbotron
         button.btn.btn-lg.btn-default#red-plus +
         button.btn.btn-lg.btn-default#red-minus -
-
   div.text-center
-    button.btn.btn-lg.btn-default Clear Scores
+    button.btn.btn-lg.btn-default#clear-scores Clear Scores
+    button.btn.btn-lg.btn-warning#shift-list Shift List
+  include ./upnext.pug
 block scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
   script(src="/js/admin.js")
