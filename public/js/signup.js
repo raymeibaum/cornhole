@@ -1,6 +1,8 @@
 const socket = io();
 
 const $upNextContainer = $('div.well-container');
+const $inputPlayerOne = $('input#player-one');
+const $inputplayerTwo = $('input#player-two');
 
 function submitTeam($event) {
   $event.preventDefault();
@@ -8,6 +10,8 @@ function submitTeam($event) {
     teammate1: $event.target[0].value,
     teammate2: $event.target[1].value
   });
+  $inputPlayerOne.val('');
+  $inputplayerTwo.val('');
 }
 
 socket.on('signup-list', function(list) {
