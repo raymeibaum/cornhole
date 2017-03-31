@@ -66,10 +66,14 @@ io.on('connection', function(socket){
     io.emit('signup-list', upNext);
   });
 });
-    
+
 
 app.get('/', function(req, res) {
   res.render(__dirname + '/views/main.pug');
+});
+
+app.get('/score', function(req, res) {
+  res.render(__dirname + '/views/score.pug');
 });
 
 app.get('/admin', function(req, res) {
