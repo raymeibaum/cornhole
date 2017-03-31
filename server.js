@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 
   socket.on('get-score', function() {
     io.emit('current-score', scores)
-  })
+  });
 
   socket.on('reset-scores', function() {
     scores.red = 0;
