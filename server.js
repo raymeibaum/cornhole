@@ -5,6 +5,9 @@ const pug = require('pug');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+app.set('view engine', 'pug');
+app.use(express.static(__dirname + '/public'));
+
 let scores = {
   red: 0,
   black: 0
@@ -30,8 +33,6 @@ io.on('connection', function(socket){
         scores.red--;
         break;
     }
-    console.log('Black: ' + scores.black);
-    console.log('Red:' + scores.red);
     io.emit('current-score', scores);
   });
 
@@ -88,15 +89,12 @@ app.get('/admin', function(req, res) {
 });
 
 app.get('/signup', function(req, res) {
-  res.render(__dirname + '/views/signup.pug')
+  res.render(__dirname + '/views/signup.pug');
 });
 
 app.get('/:catchall', function(req, res) {
   res.redirect('/');
-})
-
-app.set('view engine', 'pug');
-app.use(express.static(__dirname + '/public'));
+});
 
 const port = process.env.PORT || 3000;
 http.listen(port, console.log(`listening on port: ${port}`));
