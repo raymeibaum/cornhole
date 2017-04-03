@@ -1,4 +1,6 @@
 const socket = io();
+const $redScore = $('h1#red-score');
+const $blackScore = $('h1#black-score');
 const $upNextContainer = $('div.well-container');
 
 function adjustScore(event) {
@@ -22,6 +24,11 @@ socket.on('signup-list', function(list) {
   list.forEach(function(team) {
     $upNextContainer.append(`<div class="well"><strong>${team.teammate1} and ${team.teammate2}</strong></div>`)
   });
+});
+
+socket.on('current-score', function(scores) {
+  $blackScore.text(scores.black);
+  $redScore.text(scores.red);
 });
 
 $(function() {
